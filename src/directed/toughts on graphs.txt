@@ -1,0 +1,82 @@
+﻿Enumeration Problem
+	The problem: 
+		"how can I get an edge given any 2 vertex?"
+		"How do you map 2 vertices to many edges?"
+		ie, GetEdge(TVertex source, TVertex end)
+
+	Solution 0, Enumeration
+		Dictionary<TVertex, IEnumerable<TEdge>>
+			Then for each edge just check if it's the edge you want!
+
+		One can easily map a SINGLE vertex to edges
+		Then one must enumerate them
+
+		foreach(TEdge aEdge in _edges[vertexSource])
+		{
+			if(aEdge.Target.Equals(vertexTarget))
+			{
+				return aEdge;
+			}
+		}
+
+
+	Solution 1, Double Key
+		Dictionary<TVertex, Dictionary<TVertex, TEdge>>
+			this is "double keyed"
+		Caveats
+			No parallel edges!
+			Cannot repeat key in a dictionary, so a pair of vertex could only map to one edge!
+
+	Solution 2, Edge Query
+		Dictionary<TVertex, Dictionary<Edge, Vertex>>
+
+		GetEdge(TVertext sorce, TVertex target)
+		{
+			if
+			(
+				_map.TryGetValue(source, out vertexToEdge) && // there are edges from that vertex
+				vertexToEdge.TryGetValue(new Edge(source, target), out TVertex targetOut) // create an edge as a query
+			)
+			{
+			}
+		}
+
+		Thoughts
+			This is same as Solution 1, using 2 vertices as 2 keys
+			This time the "Edge" is a glorified "key"
+
+			if using Edge to query a dictionary, then GetHashCode and Equals is dependant only on the vertices
+				implies all parallel edges have the same GetHashCode and Equals
+					implies it is impossible to distinguish them, and therefore cannot be retrieved
+			
+			The second out vertex isn't even used, and if all Edges with the same vertices are the same, then it doesn't really matter which specific instance you return
+			ie, Dictionary<TVertex, HashSet<Edge>>
+			This is actually just creating a key, checking if it contains it, then return the key
+
+		Caveats
+			No parallel edges!
+
+
+	Solution 3, Enumerated Parallel edges
+		Dictionary<TVertex, Dictionary<Vertex, IEnumerable<TEdge>>> vertexToEdgesParallel
+		Enumeration only upon parallel edges
+
+Conclusions on graphs where edges don't have their own identity
+	Dictionary<TVertex, HashSet<TVertex>>, and create Edge instances as needed
+		If there can only be one edge from Vertex to Vertex, then all Edges with the same vertexes should be consider equal
+			Because repeat mapping should be forbidden, so there is only ever one Edge where Target and Sources are the same
+
+	Dictionary<TVertex, Dictionary<TVertex, TEdge>>, to cache the edges
+		Prevents creation at runtime
+
+Rooted tree is a directed graph which forbids parralel edges and loops
+
+TreeRooted
+
+	TVertex _root; // keep track of the root
+
+	Dictionary<TVertex, Dictionary<TVertex, TEdge>> _vertexAdChildren; // edges (children) as wanted
+	Dictionary<TVertex, Tuple<TVertex, TEdge>> _vertexAdParent; // only one in edge (parent)
+	Dictionary<TVertex, Int32> _vertexAdLevel; // levels independant of vertex type
+
+	// adding must NOT INCLUDE EXISTING VERTICES!
