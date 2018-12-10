@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-  	<AssemblyName>SINeDUSTRIES.dotEX.Graphs</AssemblyName>
-    <PackageId>dotEX.Graphs</PackageId>
+  	<AssemblyName>SINeDUSTRIES.dotEX.Graphs.Runtime</AssemblyName>
+    <PackageId>SINeDUSTRIES.dotEX.Graphs.Runtime</PackageId>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Version>0.1.0-debug0001</Version>
     <RootNamespace>SINeDUSTRIES</RootNamespace>
@@ -17,7 +17,7 @@
     <Folder Include="readme\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dotEX\dotEX.csproj" />
+    <ProjectReference Include="..\..\dotEX\Runtime\SINeDUSTRIES.dotEX.Runtime.csproj" />
   </ItemGroup>
 
 </Project>

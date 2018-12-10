@@ -19,6 +19,6 @@
     <Folder Include="readme\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dotEX.Graphs\dotEX.Graphs.csproj" />
+    <ProjectReference Include="..\Runtime\SINeDUSTRIES.dotEX.Graphs.Runtime.csproj" />
   </ItemGroup>
 </Project>

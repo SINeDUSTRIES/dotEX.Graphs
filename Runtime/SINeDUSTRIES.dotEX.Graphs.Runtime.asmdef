@@ -1,0 +1,10 @@
+{
+    "name": "SINeDUSTRIES.dotEX.Graphs.Runtime",
+    "references": [
+        "SINeDUSTRIES.dotEX.Runtime"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

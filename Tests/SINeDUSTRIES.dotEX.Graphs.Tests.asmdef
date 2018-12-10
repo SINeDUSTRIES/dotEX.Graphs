@@ -1,0 +1,13 @@
+{
+    "name": "SINeDUSTRIES.dotEX.Graphs.Tests",
+    "references": [
+        "SINeDUSTRIES.dotEX.Runtime",
+        "SINeDUSTRIES.dotEX.Graphs.Runtime"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
