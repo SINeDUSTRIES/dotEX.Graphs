@@ -1,24 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <AssemblyName>SINeDUSTRIES.dotEX.Graphs.Test</AssemblyName>
-  	<TargetFramework>netcoreapp2.0</TargetFramework>
-  	<OutputType>Exe</OutputType>
-  	<StartupObject>SINeDUSTRIES.Collections.Test.Program</StartupObject>
-    <Version>0.0.7-debug0042</Version>
-  	<RootNamespace>SINeDUSTRIES.Collections.Test</RootNamespace>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="NUnitLite" Version="3.10.1" />
-    <PackageReference Include="QuickGraph.All" Version="3.6.61119.8" />
+    <PackageReference Include="nunit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="readme\" />
-  </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\Runtime\SINeDUSTRIES.dotEX.Graphs.Runtime.csproj" />
   </ItemGroup>
+  
 </Project>
