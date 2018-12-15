@@ -1,0 +1,10 @@
+{
+    "name": "com.sinedustries.dotex.graphs",
+    "displayName": "SINeDUSTRIES.dotEX.Graphs",
+    "version": "0.1.0",
+    "unity": "2018.1",
+    "description": "Library",
+    "keywords": ["library"],
+    "category": "Library",
+    "dependencies": { }
+}
