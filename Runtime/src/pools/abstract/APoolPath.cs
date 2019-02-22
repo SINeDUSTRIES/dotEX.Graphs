@@ -50,7 +50,7 @@ namespace SINeDUSTRIES.Collections
     /// Implements <see cref="APool{TID, TElement}.idGlobalChildGet(TID, TID)"/>;
     /// </summary>
     override protected String idGlobalChildGet(String idChildRelative, String idParent)
-    => UtilStrings.Combine(idParent, idChildRelative, this.Seperator);
+    => StringsUtils.Combine(idParent, idChildRelative, this.Seperator);
 
     /// <summary>
     /// Implements <see cref="APool{TID, TElement}.idGlobalParentGet(TID)"/>;

@@ -6,7 +6,7 @@ namespace SINeDUSTRIES.Collections
   /// <summary>
   /// Static class which contains algorithms;
   /// </summary>
-  static public class UtilGraphDirected
+  static public class GraphDirectedUtils
   {
     /// <summary>
     /// Sort topologically using Khan's Algorithm;
@@ -15,6 +15,6 @@ namespace SINeDUSTRIES.Collections
     /// <param name="directedGraph">A directed acyclic graph.</param>
     /// <returns>Nodes in topological order.</returns>
     static public List<TNode> SortTopological<TNode>(this GraphDirected<TNode> directedGraph)
-    => UtilAlgorithms.SortKahns(directedGraph.Nodes, directedGraph.Edges);
+    => SortUtils.SortKahns(directedGraph.Nodes, directedGraph.Edges);
   }
 }

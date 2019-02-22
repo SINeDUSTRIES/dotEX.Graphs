@@ -24,11 +24,11 @@ namespace SINeDUSTRIES.Collections
       _equalityComparerVertex.Equals(x.Target, y.Target);
 
     /// <summary>
-    /// via <see cref="UtilHash.CreateFNV(object[])"/> on <see cref="IEdge{TVertex}.Source"/> and <see cref="IEdge{TVertex}.Target"/>;
+    /// via <see cref="HashUtils.CreateFNV(object[])"/> on <see cref="IEdge{TVertex}.Source"/> and <see cref="IEdge{TVertex}.Target"/>;
     /// </summary>
     override public Int32 GetHashCode(TEdge obj)
     =>
-      UtilHash.CreateFNV
+      HashUtils.CreateFNV
       (
         _equalityComparerVertex.GetHashCode(obj.Source),
         _equalityComparerVertex.GetHashCode(obj.Target)
